@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lettura Json</title>
+</head>
+<body>
+    <h1>Lettura JSON</h1>
+    <button onclick="caricaDati()">Carica Dati</button>
+    <div id="risForm" style="visibility:hidden;">
+        <h2>Dati Persone</h2>
+        <div id="stringaJSON"></div>
+    </div>
+
+    <script>
+        function caricaDati() {
+            // Utilizza fetch per ottenere il file JSON
+            fetch('Json.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Errore nel caricamento del file JSON: ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    mostraInfo(data);  
+                    document.getElementById("risForm").style.visibility = "visible";  
+                })
+                .catch(error => console.error('Errore nel caricamento del file JSON:', error));
+        }
+
+        function mostraInfo(ogg) {
+            var tabella = document.createElement("table");
+            tabella.setAttribute("border", "1");
+
+            ogg.persone.forEach(function(persona) {
+                var riga = document.createElement("tr");
+                
+                var colonna = document.createElement("td");
+                colonna.textContent = "Nome: " + persona.nome + ", Cognome: " + persona.cognome + 
+                                      ", Età: " + persona.eta + ", Indirizzo: " + persona.indirizzo + 
+                                      ", Città: " + persona.citta + 
+                                      ", Telefono1: " + persona.telefoni.telefono1 + 
+                                      ", Telefono2: " + persona.telefoni.telefono2 + 
+                                      ", Sport: " + persona.sport.join(", ");
+                riga.appendChild(colonna);
+                tabella.appendChild(riga);
+            });
+
+            document.getElementById("stringaJSON").appendChild(tabella);
+        }
+    </script>
+</body>
+</html>
