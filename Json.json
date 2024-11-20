@@ -1,32 +1,32 @@
 {
     "persone": [
       {
-        "nome": "Daniel",
-        "cognome": "Milanov",
-        "eta": 18,
-        "indirizzo": "Via Roma 123",
+        "nome": "Massimo",
+        "cognome": "Scotti",
+        "eta": 58,
+        "indirizzo": "Via De Nicola 14",
         "citta": "Lainate",
         "telefoni": {
-          "telefono1": "1234567890",
+          "telefono1": "3357329677",
           "telefono2": "0987654321"
         },
-        "sport": [
-          "calcio",
-          "tennis"
+        "hobby": [
+          "modellismo",
+          "guardare serie tv"
         ]
       },
       {
         "nome": "Gabriele",
         "cognome": "Scotti",
         "eta": 18,
-        "indirizzo": "Via Verdi 456",
+        "indirizzo": "Via De Nicola 14",
         "citta": "Lainate",
         "telefoni": {
-          "telefono1": "1112223334",
+          "telefono1": "3311506591",
           "telefono2": "4445556667"
         },
         "sport": [
-          "rompere le pallle"
+          "palestra"
         ]
       }
     ]
